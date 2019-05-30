@@ -62,7 +62,7 @@ class Commitment p where
 --   There are two additional basic combinators that we expect to be implemented
 --   afresh for every concrete type, but which (for technical reasons)
 --   cannot be class methods.  They are @next@ and @satisfy@.
-class (Functor p, Monad p, Applicative p, Alternative p, Commitment p) =>
+class (Functor p, MonadFail p, Monad p, Applicative p, Alternative p, Commitment p) =>
       PolyParse p
 
 infixl 3 `apply`

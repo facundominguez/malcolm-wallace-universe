@@ -63,7 +63,7 @@ instance Monad Parser where
    -- >>=         :: Parser a -> (a -> Parser b) -> Parser b
    (P p) >>= f     = P (\inp -> concat [papply (f v) out | (v,out) <- p inp])
 
-   fail            = Fail.fail
+--   fail            = Fail.fail
 
 instance Fail.MonadFail Parser where
    -- fail        :: String -> Parser a

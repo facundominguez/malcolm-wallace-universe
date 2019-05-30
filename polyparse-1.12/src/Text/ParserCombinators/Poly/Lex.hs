@@ -56,7 +56,7 @@ instance Functor (Parser t) where
 
 instance Monad (Parser t) where
     return       = pure
-    fail         = Fail.fail
+--    fail         = Fail.fail
     (P f) >>= g  = P (continue . f)
       where
         continue (Success ts x)             = let (P g') = g x in g' ts

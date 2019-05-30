@@ -89,7 +89,7 @@ instance Monad (Parser s t e) where
                             [ papply' (f v) s out | (v,s,out) <- res ]
                         Left err  -> Left err
                        )
-   fail            = Fail.fail
+--   fail            = Fail.fail
 
 instance Fail.MonadFail (Parser s t e) where
    -- fail        :: String -> Parser s t e a
